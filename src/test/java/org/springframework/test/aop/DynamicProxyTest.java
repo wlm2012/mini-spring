@@ -32,21 +32,21 @@ public class DynamicProxyTest {
 	}
 
 	@Test
-	public void testJdkDynamicProxy() throws Exception {
+	public void testJdkDynamicProxy() {
 		WorldService proxy = (WorldService) new JdkDynamicAopProxy(advisedSupport).getProxy();
 		proxy.explode();
 	}
 
 
 	@Test
-	public void testCglibDynamicProxy() throws Exception {
+	public void testCglibDynamicProxy() {
 		WorldService proxy = (WorldService) new CglibAopProxy(advisedSupport).getProxy();
 		proxy.explode();
 	}
 
 
 	@Test
-	public void testProxyFactory() throws Exception {
+	public void testProxyFactory() {
 		// 使用JDK动态代理
 		advisedSupport.setProxyTargetClass(false);
 		WorldService proxy = (WorldService) new ProxyFactory(advisedSupport).getProxy();
